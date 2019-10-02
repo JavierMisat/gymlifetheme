@@ -1,8 +1,10 @@
-<?php
-get_header();
-while (have_posts()):the_post(); ?>
-    <h1><?php the_title() ?></h1>
-    <p>Publicado el: <?php the_date(); ?></p>
-    <p><i>Publicado por: <?php the_author(); ?></i></p>
-    <p><?php the_content(); ?></p>
-<?php endwhile; ?>
+<?php get_header(); ?>
+
+<main class="contenedor pagina seccion con-sidebar">
+    <div class="contenido-principal">
+        <?php get_template_part('template-parts/loop-paginas'); ?>
+    </div>
+    <?php get_sidebar(); ?>
+</main>
+
+<?php get_footer(); ?>
