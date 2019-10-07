@@ -296,6 +296,7 @@ hr {
 .pagina h1 {
     margin-bottom: 4rem;
 }
+
 @media (min-width: 768px) {
     .pagina.con-sidebar {
         display: flex;
@@ -310,11 +311,98 @@ hr {
         flex: 0 0 calc(35% - 2rem);
     }
 }
+
 /** No sidebar **/
-.no-sidebar{
+.no-sidebar {
     display: flex;
     justify-content: center;
 }
-.no-sidebar.contenido-principal{
+
+.no-sidebar.contenido-principal {
     flex: 0 1 800px;
+}
+
+/**** Clases ****/
+.lista-clases {
+    margin-top: 4rem;
+}
+
+@media (min-width: 768px) {
+    .lista-clases {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+    }
+}
+
+/**** Cards ****/
+@media (min-width: 768px) {
+    .gradient:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+31,0.35+61,0.75+100 */
+        background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0) 31%, rgba(0,0,0,0.35) 61%, rgba(0,0,0,0.75) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 31%,rgba(0,0,0,0.35) 61%,rgba(0,0,0,0.75) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 31%,rgba(0,0,0,0.35) 61%,rgba(0,0,0,0.75) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#bf000000',GradientType=0 ); /* IE6-9 */
+    }
+}
+
+.card {
+    margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+    .card {
+        flex: 0 0 calc(50% - 2rem);
+        position: relative;
+    }
+}
+
+.card img {
+    display: block;
+}
+
+.card .contenido {
+    padding: 3rem;
+}
+
+@media (min-width: 768px) {
+    .card .contenido {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        text-align: left;
+        z-index: 2;
+    }
+}
+
+.card .contenido h3 {
+    line-height: 1;
+    color: var(--colorPrimario);
+}
+
+@media (min-width: 768px) {
+    .card .contenido h3 {
+        color: var(--blanco);
+    }
+}
+
+.card .contenido p {
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .card .contenido p {
+        color: var(--colorPrimario);
+    }
 }

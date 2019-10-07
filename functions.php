@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * Consultas reutilizables
+ */
+require_once get_template_directory().'/inc/queries.php';
+
 //Cuando se activa el tema ejecutamos e inicializamos soportes
 function gymlife_setup()
 {
