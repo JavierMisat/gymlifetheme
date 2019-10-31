@@ -7,15 +7,24 @@
 
 // Estilos para el menú de login
 	function admin_styles () {
-		wp_enqueue_style( 'loginCSS', get_template_directory_uri() . '/login/login.css', array(),
+		wp_enqueue_style( 'vegasCSS', get_template_directory_uri() . '/login/css/vegas.min.css',
+			array(), '1.0.0' );
+		wp_enqueue_style( 'loginCSS', get_template_directory_uri() . '/login/css/login.css',
+			array(),
 			'1.0.0' );
 		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script( 'vegasJS', get_template_directory_uri() . '/login/js/vegas.min.js',
+			array( 'jquery' ), '1.0.0', true );
 		wp_enqueue_script( 'loginJS', get_template_directory_uri() . '/login/js/login.js',
 			array( 'jquery' ), '1.0.0', true );
+		wp_localize_script( 'loginJS', 'login_imagenes',
+			[
+				'ruta_plantilla' => get_template_directory_uri(),
+			]
+		);
 	}
 
 	add_action( 'login_enqueue_scripts', 'admin_styles', 10 );
-
 
 //Cuando se activa el tema ejecutamos e inicializamos soportes
 	function gymlife_setup () {
@@ -56,6 +65,13 @@
 			wp_enqueue_style( 'slicknavCSS', get_template_directory_uri() . '/css/slicknav.min.css',
 				array(), '1.0.0' );
 
+			if ( is_page( 'galeria' ) ):
+				//Cargamos estilos de lightbox
+				wp_enqueue_style( 'lightboxCSS',
+					get_template_directory_uri() . '/css/lightbox.min.css',
+					array(), '2.11.1' );
+			endif;
+
 			//Agregando normalize a mi plantilla
 			wp_enqueue_style( 'normalize', get_template_directory_uri() . '/css/normalize.css',
 				array(), '8.0.1' );
@@ -68,6 +84,13 @@
 			wp_enqueue_script( 'slicknavJS',
 				get_template_directory_uri() . '/js/jquery.slicknav.min.js', array( 'jquery' ),
 				'1.0.0', true );
+
+			if ( is_page( 'galeria' ) ):
+				//Cargamos funcionalidad de lightbox
+				wp_enqueue_script( 'lightboxJS',
+					get_template_directory_uri() . '/js/lightbox.min.js', array( 'jquery' ),
+					'2.11.1', true );
+			endif;
 
 			//Agregamos archivos js personalizados
 			wp_enqueue_script( 'scriptsJS', get_template_directory_uri() . '/js/scripts.js',
