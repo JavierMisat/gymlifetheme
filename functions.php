@@ -1,7 +1,7 @@
 <?php
 
 	/**
-	 * Consultas reutilizables
+	 * Consultas reutilizables Javier Misat
 	 */
 	require_once get_template_directory() . '/inc/queries.php';
 
